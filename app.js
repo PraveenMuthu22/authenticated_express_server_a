@@ -9,7 +9,7 @@ const articleRoutes = require('./routes/articleRoutes');
 
 const User = require('./models/User');
 
-const CONNECTION_STRING = 'mongodb+srv://test:2012Test@authenticated-express-server-hzmbt.mongodb.net/test?retryWrites=true';
+const CONNECTION_STRING = 'Your value here';
 
 const app = express();
 
