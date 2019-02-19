@@ -22,6 +22,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/auth', authRouter.router);
 app.use('/articles', articleRoutes);
 
+app.get('/test', (req, res)=> {
+	 res.send('Hello World');
+});
+
 app.get('/getUsers', authRouter.authenticate, async (req, res) => {
   const users = await User.find({});
   res.status(200).send(users);

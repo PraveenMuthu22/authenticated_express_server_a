@@ -14,7 +14,7 @@ router.post('/post', authRoutes.authenticate, (req, res) => {
       console.log(error);
     } else {
       console.log(result);
-      return res.status(200).send('Article Posted');
+      res.status(200).send('Article Posted');
     }
   });
 });

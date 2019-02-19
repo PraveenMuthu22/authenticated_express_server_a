@@ -6,8 +6,13 @@ const secret = 'thisIsMySecret123';
 
 const router = express.Router();
 
-router.post('/register', (req, res) => {
+router.post('/register', async (req, res) => {
   const user = new User(req.body);
+
+  const userExists = await User.findOne({ email: req.body.email });
+  if (userExists) {
+    return res.status(400).send({ error: 'User already exists' });
+  }
 
   user.save((error, newUser) => {
     if (error) {
